@@ -1,0 +1,111 @@
+.containerPrincipal {
+  display: flex;
+  width: 100%;
+
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.content {
+  display: flex;
+  width: 46rem;
+
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.newTask {
+  display: flex;
+  width: 100%;
+
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: -1.5rem;
+}
+
+/* .newTask input {
+  width: 39.875rem;
+  padding: 1rem;
+
+  background-color: var(--gray-500);
+  color: var(--gray-100);
+
+  border: 1px solid var(--gray-700);
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.newTask input::placeholder {
+  color: var(--gray-300);
+} */
+
+.newTask button {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 1rem;
+
+  background-color: var(--blue-dark);
+  color: var(--gray-100);
+  font-size: 0.875rem;
+  font-weight: bold;
+
+  border-radius: 8px;
+  border: 0;
+
+  cursor: pointer;
+  transition: background-color 0.1s;
+}
+
+.newTask button:hover {
+  background-color: var(--blue);
+}
+
+.newTask button svg {
+  margin-left: 0.5rem;
+}
+
+.tasks {
+  display: flex;
+
+  flex-direction: column;
+  width: 100%;
+
+  margin-top: 4rem;
+}
+
+.infoTasks {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+}
+
+.leftSide strong {
+  color: var(--blue);
+  font-size: 0.875rem;
+}
+
+.rightSide strong {
+  color: var(--purple);
+  font-size: 0.875rem;
+}
+
+.leftSide span,
+.rightSide span {
+  padding: 0.125rem 0.5rem;
+
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: var(--gray-200);
+  background-color: var(--gray-400);
+
+  border-radius: 999px;
+
+  margin-left: 0.5rem;
+}
