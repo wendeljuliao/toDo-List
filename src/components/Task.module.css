@@ -1,0 +1,81 @@
+.task {
+  display: flex;
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+
+  background-color: var(--gray-500);
+
+  border: 1px solid var(--gray-400);
+
+  border-radius: 8px;
+}
+
+.task input[type="checkbox"] {
+  display: none;
+}
+
+.task input[type="checkbox"] + label {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+
+  border: 1px solid var(--blue);
+  border-radius: 999px;
+  /* appearance: none;
+  -webkit-appearance: none;
+  outline: none; */
+  background-color: transparent;
+
+  cursor: pointer;
+  position: relative;
+}
+
+.task input[type="checkbox"]:checked + label {
+  border: 1px solid transparent;
+}
+
+.task input[type="checkbox"]:checked + label::after {
+  content: "✔";
+  display: inline-block;
+  border-radius: 999px;
+  color: var(--gray-100);
+
+  width: 22px;
+  height: 22px;
+  text-align: center;
+  background-color: var(--purple-dark);
+}
+
+.task input[type="checkbox"]:not(:checked) + label:hover {
+  background-color: rgba(30, 111, 159, 0.2);
+  border: 1px solid var(--blue-dark);
+}
+
+.task input[type="checkbox"]:checked + label:hover::after {
+  background-color: var(--purple);
+}
+
+.task p {
+  font-size: 0.875rem;
+  color: var(--gray-100);
+
+  line-height: 1.4;
+  margin: 0 0.75rem;
+}
+
+.task svg {
+  color: var(--gray-300);
+
+  cursor: pointer;
+}
+
+.task svg:hover {
+  //box-sizing: initial;
+
+  color: var(--danger);
+  background-color: var(--gray-400);
+
+  padding: 0.3125rem 0.375rem;
+  border-radius: 4px;
+}

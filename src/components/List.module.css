@@ -11,6 +11,16 @@
   border-top: 1px solid var(--gray-400);
 }
 
+.listWithTasks {
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: 1.5rem;
+  line-height: 1.4;
+}
+
 .list strong {
   margin-top: 1rem;
   color: var(--gray-300);
