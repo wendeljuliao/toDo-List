@@ -7,8 +7,10 @@ import { PlusCircle } from "phosphor-react";
 import { List } from "./components/List";
 import { Input } from "./components/Input";
 
+import { v4 as uuid } from "uuid";
+
 interface ITask {
-  id: number;
+  id: string;
   description: string;
   isDone: boolean;
 }
@@ -16,31 +18,31 @@ interface ITask {
 function App() {
   const [tasks, setTasks] = useState([
     {
-      id: 0,
+      id: uuid(),
       description:
         "Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.",
       isDone: false,
     },
     {
-      id: 1,
+      id: uuid(),
       description:
         "Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer 2.",
       isDone: false,
     },
     {
-      id: 2,
+      id: uuid(),
       description:
         "Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer 3.",
       isDone: false,
     },
     {
-      id: 3,
+      id: uuid(),
       description:
         "Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer 4.",
       isDone: false,
     },
     {
-      id: 4,
+      id: uuid(),
       description:
         "Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer 5.",
       isDone: false,
@@ -56,7 +58,7 @@ function App() {
     setTasks((prevState) => [
       ...prevState,
       {
-        id: tasks.length,
+        id: uuid(),
         description: description,
         isDone: false,
       },
@@ -65,7 +67,7 @@ function App() {
     setDescription("");
   }
 
-  function handleClickedCheckbox(id: number) {
+  function handleClickedCheckbox(id: string) {
     const tasksUpdated = tasks.filter((task) => {
       if (task.id === id) {
         task.isDone = !task.isDone;
@@ -79,7 +81,7 @@ function App() {
     setTasks(tasksUpdated);
   }
 
-  function handleDeleteTask(id: number) {
+  function handleDeleteTask(id: string) {
     const tasksUpdated = tasks.filter((task) => task.id !== id);
 
     checkTasksDone(tasksUpdated);

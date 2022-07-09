@@ -3,11 +3,11 @@ import styles from "./Task.module.css";
 import { Trash } from "phosphor-react";
 
 interface ITaskProps {
-  id: number;
+  id: string;
   description: string;
   isDone: boolean;
-  onHandleClickedCheckbox: (id: number) => void;
-  onHandleDeleteTask: (id: number) => void;
+  onHandleClickedCheckbox: (id: string) => void;
+  onHandleDeleteTask: (id: string) => void;
 }
 
 export function Task({

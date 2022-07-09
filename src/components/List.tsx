@@ -7,12 +7,12 @@ import { Task } from "./Task";
 
 interface IListTasks {
   tasks: {
-    id: number;
+    id: string;
     description: string;
     isDone: boolean;
   }[];
-  handleClickedCheckbox: (id: number) => void;
-  handleDeleteTask: (id: number) => void;
+  handleClickedCheckbox: (id: string) => void;
+  handleDeleteTask: (id: string) => void;
 }
 
 export function List({
