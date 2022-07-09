@@ -3,6 +3,7 @@ import {
   ChangeEvent,
   Dispatch,
   InputHTMLAttributes,
+  InvalidEvent,
   SetStateAction,
 } from "react";
 
@@ -19,6 +20,12 @@ export function Input({
 }: IInputProps) {
   function handleNewTaskChange(e: ChangeEvent<HTMLInputElement>) {
     setDescription(e.target.value);
+    console.log(e.target.value);
+  }
+
+  function handleNewTaskDescriptionInvalid(e: InvalidEvent<HTMLInputElement>) {
+    e.target.setCustomValidity("Este campo é obrigatório");
+    console.log(e);
   }
 
   return (
@@ -28,6 +35,8 @@ export function Input({
       placeholder={placeholder}
       value={description}
       onChange={handleNewTaskChange}
+      onInvalid={handleNewTaskDescriptionInvalid}
+      required
     />
   );
 }

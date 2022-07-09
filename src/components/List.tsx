@@ -11,9 +11,15 @@ interface IListTasks {
     description: string;
     isDone: boolean;
   }[];
+  handleClickedCheckbox: (id: number) => void;
+  handleDeleteTask: (id: number) => void;
 }
 
-export function List({ tasks }: IListTasks) {
+export function List({
+  tasks,
+  handleClickedCheckbox,
+  handleDeleteTask,
+}: IListTasks) {
   return tasks.length === 0 ? (
     <div className={styles.list}>
       <img src={clipBoard} alt="Prancheta" />
@@ -23,7 +29,16 @@ export function List({ tasks }: IListTasks) {
   ) : (
     <div className={styles.listWithTasks}>
       {tasks.map((task) => {
-        return <Task key={task.id} description={task.description} />;
+        return (
+          <Task
+            key={task.id}
+            id={task.id}
+            description={task.description}
+            isDone={task.isDone}
+            onHandleClickedCheckbox={handleClickedCheckbox}
+            onHandleDeleteTask={handleDeleteTask}
+          />
+        );
       })}
     </div>
   );
