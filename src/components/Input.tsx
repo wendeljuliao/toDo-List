@@ -19,13 +19,12 @@ export function Input({
   setDescription,
 }: IInputProps) {
   function handleNewTaskChange(e: ChangeEvent<HTMLInputElement>) {
+    e.target.setCustomValidity("");
     setDescription(e.target.value);
-    console.log(e.target.value);
   }
 
   function handleNewTaskDescriptionInvalid(e: InvalidEvent<HTMLInputElement>) {
     e.target.setCustomValidity("Este campo é obrigatório");
-    console.log(e);
   }
 
   return (
